@@ -19,7 +19,8 @@ interface SignInCardProps {
 };
 
 export const SignInCard = ({ setState }: SignInCardProps) => {
-  const [] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <Card className="w-full h-full p-8">
@@ -35,16 +36,16 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
         <form className="space-y-2.5">
           <Input
           disabled={false}
-          value=""
-          onChange={() => {}}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           type="email"
           required
         />
          <Input
           disabled={false}
-          value=""
-          onChange={() => {}}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           type="password"
           required
